@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="http://localhost:8080/auth/js/keycloak.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.5/jspdf.debug.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="js/qrcode.min.js"></script>
+    <script>
+        // Parametres pour la requète PKCE
+        var config = {
+            client_id: "clientJS",
+            redirect_uri: "http://localhost/projetJ/index.html",
+            authorization_endpoint: "http://localhost:8080/auth/realms/ProjetJ/protocol/openid-connect/auth",
+            token_endpoint: "http://localhost:8080/auth/realms/ProjetJ/protocol/openid-connect/token",
+            requested_scopes: "openid"
+        };
+    </script>
+    <script>
+        setTimeout(function(){
+       
+        var payload;
+        var entete;
+        // Fonction pour diviser le QRCode en 2 parties
+        function divideToken(dataJWT){ 
+            var point1=0;
+            var point2=0;
+            payload = "";
+            entete = "";
+
+            for (let i = 0; i < dataJWT.length; i++) {
+                if (dataJWT[i] == "."){
+                    if(point1 == 0){
+                        point1 = i;
+                    }
+                    else{
+                        point2 = i;
+                    }
+                }   
+            }
+            payload = dataJWT.slice(point1,point2);
+            entete = dataJWT.slice(0,point1)+dataJWT.slice(point2);
+        }
+
+        divideToken(dataJWT);
+
+        var aff = new QRCode(document.getElementById("aff"));
+        var aff2 = new QRCode(document.getElementById("aff2"));
+        aff.makeCode(payload);
+        aff2.makeCode(entete);
+        }, 100);
+    </script>
+    <title>Bienvenue</title>
+    
+</head>
+
+<body>
+    <div class="content">
+        <div class="button">
+            <a href="http://localhost/projetJ/index.html" id="start">Connexion</a>
+            <a href="#" onclick="keycloak.accountManagement()" id="accManagement">Gérer son compte</a> 
+            <a href="http://localhost/projetJ/index.html" onclick="keycloak.logout()" id="logout" >Déconnexion</a>
+        </div>
+
+        <div id="token" class="hidden">
+            <h2>Access Token</h2>
+            <div id="access_token" class="code"></div>
+            <h2>Id Token</h2>
+            <div id="id_token" class="code"></div>
+        </div>
+    </div>
+    
+    <script src="js/pkce.js"></script>
+    <script> 
+        // Initialiser l'objet keycloak pour pouvoir utiliser les boutons Déconnexion et Gérer son compte
+        var keycloak = Keycloak('keycloak.json');
+        keycloak.init({});
+
+    </script>
+
+        <div class="qrdiv">
+            <div class="gauche">
+            <div id="aff" title="payload">
+                <p>Corps</p>
+            </div></br>
+            <a id="btn-Convert-Html2Image" href="#" style="">Download</a></br>
+        </div>
+
+        <div class="droite">
+            <div id="aff2" title="entete"> 
+                <p>Signature</p>
+            </div></br>
+            <a id="btn-Convert-Html2Image2" href="#" style="" >Download</a>
+            </div>
+        </div>
+        
+    <script src="js/downloadQR.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,101 @@
+a {
+    text-align: center;
+}
+h1{
+    margin: 10px auto;
+    width: 300px;
+    border: 3px solid black;
+    padding: 10px;
+    text-align: center;
+}
+body{
+    font-family: Open Sans;
+    text-align: center;
+    text-decoration: none;
+    word-wrap: break-word;
+    background-image: url('http://localhost:8080/auth/resources/khodp/welcome/keycloak/bg.png');
+    background-position-x: center;
+    background-position-y: bottom;
+    background-size: cover;
+    background-repeat-x: no-repeat;
+    background-repeat-y: no-repeat;
+    background-attachment: fixed;
+    background-origin: initial;
+    background-clip: initial;
+    background-color: rgb(255, 255, 255);  
+}
+#accManagement,#logout,#start,#btn-Convert-Html2Image,#btn-Convert-Html2Image2{
+    background-color: #0088ce;
+    background-image: linear-gradient(to bottom,#39a5dc 0,#0088ce 100%);
+    background-repeat: repeat-x;
+    border-color: #00659c;
+    color: #fff;
+
+    box-shadow: 0 2px 3px rgba(3,3,3,.1);
+
+    padding: 6px 10px;
+    font-size: 14px;
+    line-height: 1.3333333;
+    border-radius: 1px;
+
+    margin-bottom: 0;
+    font-weight: 600;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
+#logout{
+    background-color: #f1f1f1;
+    background-image: linear-gradient(to bottom,#fafafa 0,#ededed 100%);
+    background-repeat: repeat-x;
+    border-color: #bbb;
+    color: #4d5258;
+}
+#token {
+    border: 3px outset black;
+    background-color: white;
+    text-align: center;
+    padding: 30px 50px 50px 50px;
+    border-radius: 5px;
+}
+.button{
+    margin: auto;
+    padding: 10px;
+}
+#qrcod{
+    width: 290px;
+    height: 360px;
+    margin: 0 auto;
+    border: 3px outset black;
+    background-color: white;
+    text-align: center;
+    padding: 10px;
+    border-radius: 5px;
+}
+#aff,#aff2{
+    width: 255px;
+    height: 305px;
+    margin: 0 auto;
+    background-color: white;
+    text-align: center;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.qrdiv{
+    width: 80%;
+    overflow: hidden;
+    margin: auto;
+}
+
+.gauche{
+    float: left;
+}
+
+.droite{
+    float: right;
+}
