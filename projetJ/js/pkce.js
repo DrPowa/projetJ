@@ -68,7 +68,7 @@ if(q.code) {
 
             // Initialize your application now that you have an access token.
             // Here we just display it in the browser.
-            document.getElementById("access_token").innerText = body.access_token;
+            //document.getElementById("access_token").innerText = body.access_token;
             document.getElementById("id_token").innerText = body.id_token;
             document.getElementById("start").classList = "hidden";
             document.getElementById("token").classList = "";             
