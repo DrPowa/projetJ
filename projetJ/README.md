@@ -1,4 +1,4 @@
-Prérequis :
+Prérequis :     
 	Télécharger ce dossier Git  
 	Avoir WampServer ou application similaire pour host notre application
 
