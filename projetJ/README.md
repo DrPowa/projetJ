@@ -1,3 +1,7 @@
+Prérequis :
+	Télécharger ce dossier Git  
+	Avoir WampServer ou application similaire pour host notre application
+
 Installation Keycloak :  
 
 	1) Télécharger le serveur standalone de Keycloak : https://www.keycloak.org/downloads.html
@@ -5,17 +9,19 @@ Installation Keycloak :
 	2) Extraire le dossier et lancer .../keycloak-10.0.2/bin/standalone.bat 
 
 	3) Une fois le standalone lancé aller à http://localhost:8080/auth
-	Entrez un nom d'utilisateur et un mot de passer pour créer le compte admin
+	Entrez un nom d'utilisateur et un mot de passe pour créer le compte admin
 
-	4) Cliquer sur la console d'administration  sur la page ou aller directement ici : http://localhost:8080/auth/admin/
+	4) Cliquer sur la console d'administration sur la page ou aller directement ici : http://localhost:8080/auth/admin/
 Pour plus d'infos aller sur : https://www.keycloak.org/docs/latest/getting_started/
 
 
 Configuration Keycloak :  
 
-	1) Une fois arrivé sur la console d'administrateur cliquer sur "Select Realm" Puis sur "Add realm"
+	1) Une fois arrivé sur la console d'administrateur passez la souris sur "Master" (en haut à droite de la page)
+	Puis "add realm"
 
 	Cliquer sur "Select file" puis trouver ../projetJ/realm-export-projetJ.json dans le dossier du projet.
+	Cliquer sur "Create"
 
 	Une fois le realm "projetJ" importé, répétez l'opération pour le realm "identity-provider" 
 
@@ -24,14 +30,14 @@ Configuration Keycloak :
 	2) Configuration des clients
 
 	Aller dans Clients du realm "identity-provider" puis trouver "keycloakAsIdentityProvider"   
-	Cliquer sur "Edit"  
+	Cliquer sur "Edit" ou directement sur le nom du client
 	Cliquer sur "Credentials"  
 	Cliquer sur "Regenerate Secret"  
 	Copier ce secret  
 
 	Aller dans le realm "ProjetJ"  
 	Cliquer sur "Identity Providers"  
-	Trouver "keycloak-oidc" puis cliquer sur "Edit"  
+	Trouver "keycloak-oidc" puis cliquer sur "Edit" ou directement sur le nom
 	Descendre jusqu'à trouver "Client Secret"  
 	Coller le secret ici  
 	Descendre jusqu'au bouton "Save" et sauvegardez la configuration  
@@ -39,9 +45,9 @@ Configuration Keycloak :
 
 	3) Quand les 2 realms sont importés allez dans chacun des 2 et créer des utilisateurs :
 
-	Cliquer sur "Users" puis "Add user", renseigner au moins l'adresse mail.
+	Cliquer sur "Users" (en bas à gauche de la page) puis "Add user", renseigner au moins le nom d'utilisateur.
 
-	Quand l'utilisateur est créer retourner à "Users" puis cliquer sur "View all users"
+	Quand l'utilisateur est créé retourner à "Users" puis cliquer sur "View all users"
 
 	Trouver l'utilisateur que vous venez de créer et cliquer sur "Edit"
 
@@ -49,7 +55,7 @@ Configuration Keycloak :
 
 	Renseigner 2 fois le même mot de passe pour l'utilisateur et décocher "Temporary"
 
-	Répéter pour l'autre realm
+	Répéter pour l'autre realm avec un nom d'utilisateur différent
 
 
 

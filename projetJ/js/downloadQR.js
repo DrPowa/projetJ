@@ -5,6 +5,7 @@ setTimeout(function(){
     //  
     jQuery(document).ready(function($){
         html2canvas(element, {
+            scale: 2,
             onrendered: function (canvas) {
                 getCanvas = canvas;
             }
@@ -25,6 +26,7 @@ setTimeout(function(){
     //  
     jQuery(document).ready(function($){
         html2canvas(element2, {
+            scale: 2,
             onrendered: function (canvas2) {
                 getCanvas2 = canvas2;
             }
