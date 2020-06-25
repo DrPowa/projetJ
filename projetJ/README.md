@@ -67,7 +67,7 @@ Application Web :
 	1) Une fois la configuration Keycloak terminée, lancer WampServer ou une application similaire pour héberger 
 	localement notre application web.
 
-	Déplacer tout le dossier projetJ dans le répertoire requis (C:/wamp64/www pour Wamp)
+	Déplacer tout le dossier "projetJ" dans le répertoire requis (C:/wamp64/www pour Wamp)
 
 	Une fois cela fait aller à http://localhost/projetJ/ puis cliquer sur "Connexion"
 
