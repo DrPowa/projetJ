@@ -1,5 +1,5 @@
 Prérequis :  
-   
+
 	Télécharger ce dossier Git  
 	Avoir WampServer ou application similaire pour host notre application
 
@@ -13,7 +13,8 @@ Installation Keycloak :
 	3) Une fois le standalone lancé aller à http://localhost:8080/auth
 	Entrez un nom d'utilisateur et un mot de passe pour créer le compte admin
 
-	4) Cliquer sur la console d'administration sur la page ou aller directement ici : http://localhost:8080/auth/admin/
+	4) Cliquer sur la console d'administration sur la page   
+	Ou aller directement ici : http://localhost:8080/auth/admin/
 Pour plus d'infos aller sur : https://www.keycloak.org/docs/latest/getting_started/
 
 
